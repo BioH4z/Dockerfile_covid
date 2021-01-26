@@ -1,6 +1,6 @@
 FROM biohaz/basic_ubuntu:latest
 
-# Locale for click
+# Locale
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
@@ -26,3 +26,5 @@ RUN conda create -n megahit -c bioconda megahit \
 	&& conda create -n samtools -c bioconda samtools bcftools\
 	&& conda create -n freebayes -c bioconda freebayes=1.3.2 \
 	&& conda create -n snippy -c biobuilds snippy
+
+#MAINTAINER BioH4z <https://github.com/BioH4z>
