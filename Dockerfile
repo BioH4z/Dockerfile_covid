@@ -19,11 +19,10 @@ ENV PATH /opt/miniconda3/bin:$PATH
 
 #Install required tools
 RUN apt-get update -y \
-	&& apt-get install -y fastqc bwa\
+	&& apt-get install -y fastqc bwa samtools bcftools\
 	&& pip3 install cutadapt multiqc
 
 RUN conda create -n megahit -c bioconda megahit \
-	&& conda create -n samtools -c bioconda samtools bcftools\
 	&& conda create -n freebayes -c bioconda freebayes=1.3.2 \
 	&& conda create -n snippy -c biobuilds snippy
 
